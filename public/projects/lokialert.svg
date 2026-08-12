@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="g5" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#c64fff" stop-opacity="0.35" />
+      <stop offset="55%" stop-color="#c64fff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="grid5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c64fff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#c64fff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0a0a0c" />
+  <rect width="800" height="500" fill="url(#g5)" />
+  <line x1="185" y1="185" x2="305" y2="275" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="238" y1="276" x2="398" y2="396" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="291" y1="367" x2="491" y2="17" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="344" y1="458" x2="584" y2="138" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="397" y1="49" x2="677" y2="259" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="450" y1="140" x2="770" y2="380" stroke="#c64fff" stroke-opacity="0.18" stroke-width="1.5" />
+  <circle cx="640" cy="120" r="140" fill="none" stroke="#c64fff" stroke-opacity="0.25" stroke-width="1" />
+  <circle cx="640" cy="120" r="90" fill="none" stroke="#c64fff" stroke-opacity="0.35" stroke-width="1" />
+  <rect x="60" y="340" width="240" height="1" fill="#c64fff" fill-opacity="0.3" />
+  <text x="60" y="300" font-family="'Space Grotesk', sans-serif" font-size="64" font-weight="700" fill="#c64fff" fill-opacity="0.9">LA</text>
+</svg>

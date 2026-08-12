@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="g0" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#c6ff3a" stop-opacity="0.35" />
+      <stop offset="55%" stop-color="#c6ff3a" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="grid0" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c6ff3a" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#c6ff3a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0a0a0c" />
+  <rect width="800" height="500" fill="url(#g0)" />
+  <line x1="0" y1="0" x2="120" y2="90" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="53" y1="91" x2="213" y2="211" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="106" y1="182" x2="306" y2="332" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="159" y1="273" x2="399" y2="453" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="212" y1="364" x2="492" y2="74" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="265" y1="455" x2="585" y2="195" stroke="#c6ff3a" stroke-opacity="0.18" stroke-width="1.5" />
+  <circle cx="640" cy="120" r="140" fill="none" stroke="#c6ff3a" stroke-opacity="0.25" stroke-width="1" />
+  <circle cx="640" cy="120" r="90" fill="none" stroke="#c6ff3a" stroke-opacity="0.35" stroke-width="1" />
+  <rect x="60" y="340" width="240" height="1" fill="#c6ff3a" fill-opacity="0.3" />
+  <text x="60" y="300" font-family="'Space Grotesk', sans-serif" font-size="64" font-weight="700" fill="#c6ff3a" fill-opacity="0.9">WC</text>
+</svg>

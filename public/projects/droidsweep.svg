@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <radialGradient id="g2" cx="30%" cy="20%" r="90%">
+      <stop offset="0%" stop-color="#ff5f4f" stop-opacity="0.35" />
+      <stop offset="55%" stop-color="#ff5f4f" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="grid2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff5f4f" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#ff5f4f" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="#0a0a0c" />
+  <rect width="800" height="500" fill="url(#g2)" />
+  <line x1="74" y1="74" x2="194" y2="164" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="127" y1="165" x2="287" y2="285" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="180" y1="256" x2="380" y2="406" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="233" y1="347" x2="473" y2="27" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="286" y1="438" x2="566" y2="148" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <line x1="339" y1="29" x2="659" y2="269" stroke="#ff5f4f" stroke-opacity="0.18" stroke-width="1.5" />
+  <circle cx="640" cy="120" r="140" fill="none" stroke="#ff5f4f" stroke-opacity="0.25" stroke-width="1" />
+  <circle cx="640" cy="120" r="90" fill="none" stroke="#ff5f4f" stroke-opacity="0.35" stroke-width="1" />
+  <rect x="60" y="340" width="240" height="1" fill="#ff5f4f" fill-opacity="0.3" />
+  <text x="60" y="300" font-family="'Space Grotesk', sans-serif" font-size="64" font-weight="700" fill="#ff5f4f" fill-opacity="0.9">DS</text>
+</svg>
