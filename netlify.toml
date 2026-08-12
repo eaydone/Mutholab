@@ -1,5 +1,7 @@
+# The site is built locally (npm run build → out/) and the prebuilt out/
+# directory is uploaded with the deploy, so no remote build step is needed.
 [build]
-  command = "npm run build"
+  command = "echo 'using prebuilt out/'"
   publish = "out"
 
 # Pretty URLs for client-rendered job pages: /careers/<slug> serves the
