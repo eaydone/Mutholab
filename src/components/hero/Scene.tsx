@@ -2,48 +2,33 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Float, MeshDistortMaterial, Sparkles } from "@react-three/drei";
+import { Float, Environment, Lightformer, Sparkles } from "@react-three/drei";
 import * as THREE from "three";
 
-function Blob() {
-  const meshRef = useRef<THREE.Mesh>(null);
+function Knot() {
+  const ref = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
-    if (!meshRef.current) return;
+    if (!ref.current) return;
     const t = state.clock.getElapsedTime();
-    meshRef.current.rotation.x = t * 0.08;
-    meshRef.current.rotation.y = t * 0.12;
+    ref.current.rotation.x = t * 0.1;
+    ref.current.rotation.y = t * 0.16;
   });
 
   return (
-    <Float speed={1.4} rotationIntensity={0.5} floatIntensity={0.9}>
-      <mesh ref={meshRef} position={[1.7, 0.1, 0]} scale={1.05}>
-        <icosahedronGeometry args={[1, 10]} />
-        <MeshDistortMaterial
-          color="#c6ff3a"
-          emissive="#1c2408"
-          emissiveIntensity={0.2}
-          roughness={0.42}
-          metalness={0.25}
-          distort={0.38}
-          speed={1.4}
+    <Float speed={1.2} rotationIntensity={0.4} floatIntensity={0.7}>
+      <mesh ref={ref} position={[1.9, 0.15, 0]} scale={1.02}>
+        <torusKnotGeometry args={[1, 0.32, 280, 56]} />
+        <meshPhysicalMaterial
+          color="#d7d7dc"
+          metalness={1}
+          roughness={0.16}
+          envMapIntensity={1.25}
+          clearcoat={0.5}
+          clearcoatRoughness={0.25}
         />
       </mesh>
     </Float>
-  );
-}
-
-function WireGrid() {
-  const ref = useRef<THREE.Mesh>(null);
-  useFrame((state) => {
-    if (!ref.current) return;
-    ref.current.rotation.z = state.clock.getElapsedTime() * 0.02;
-  });
-  return (
-    <mesh ref={ref} rotation={[-Math.PI / 2.4, 0, 0]} position={[0, -1.6, 0]}>
-      <planeGeometry args={[14, 14, 24, 24]} />
-      <meshBasicMaterial color="#1f1f24" wireframe transparent opacity={0.5} />
-    </mesh>
   );
 }
 
@@ -53,8 +38,8 @@ function PointerRig({ children }: { children: React.ReactNode }) {
 
   useFrame((state) => {
     if (!group.current) return;
-    const x = (state.pointer.x * viewport.width) / 24;
-    const y = (state.pointer.y * viewport.height) / 24;
+    const x = (state.pointer.x * viewport.width) / 26;
+    const y = (state.pointer.y * viewport.height) / 26;
     group.current.rotation.y += (x - group.current.rotation.y) * 0.04;
     group.current.rotation.x += (-y - group.current.rotation.x) * 0.04;
   });
@@ -68,27 +53,56 @@ export default function Scene() {
   return (
     <Canvas
       dpr={dpr}
-      camera={{ position: [0, 0, 6.5], fov: 38 }}
+      camera={{ position: [0, 0, 7], fov: 38 }}
       gl={{ antialias: true, alpha: true }}
     >
-      <ambientLight intensity={0.55} />
-      <directionalLight position={[3, 4, 2]} intensity={0.9} color="#ffffff" />
-      <pointLight position={[-4, -2, -2]} intensity={0.5} color="#c6ff3a" />
+      <ambientLight intensity={0.35} />
 
       <PointerRig>
-        <Blob />
+        <Knot />
       </PointerRig>
 
-      <WireGrid />
-
       <Sparkles
-        count={60}
-        scale={[9, 5, 4]}
-        size={1.6}
-        speed={0.25}
-        opacity={0.45}
+        count={70}
+        scale={[10, 6, 4]}
+        size={1.5}
+        speed={0.2}
+        opacity={0.4}
         color="#c6ff3a"
       />
+
+      <Environment resolution={256}>
+        <group rotation={[-Math.PI / 3, 0, 1]}>
+          <Lightformer
+            form="circle"
+            intensity={5}
+            position={[0, 5, -9]}
+            scale={2.2}
+            color="#ffffff"
+          />
+          <Lightformer
+            form="rect"
+            intensity={3}
+            position={[-5, 1, -1]}
+            scale={[6, 2, 1]}
+            color="#c6ff3a"
+          />
+          <Lightformer
+            form="rect"
+            intensity={3}
+            position={[5, -1, -1]}
+            scale={[6, 2, 1]}
+            color="#22d3ee"
+          />
+          <Lightformer
+            form="rect"
+            intensity={2.2}
+            position={[0, -5, 0]}
+            scale={[9, 3, 1]}
+            color="#8b5cf6"
+          />
+        </group>
+      </Environment>
     </Canvas>
   );
 }

@@ -28,6 +28,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <div className="aurora-bg" />
+        <div className="dots-bg" />
         <div className="noise-overlay" />
         {children}
       </body>

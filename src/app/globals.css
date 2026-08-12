@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08080a;
-  --foreground: #f3f3f1;
-  --muted: #8a8a92;
-  --surface: #101013;
-  --border: #1f1f24;
+  --background: #050507;
+  --foreground: #f4f4f2;
+  --muted: #9a9aa3;
+  --surface: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.09);
   --accent: #c6ff3a;
-  --accent-foreground: #08080a;
+  --accent-2: #22d3ee;
+  --accent-3: #8b5cf6;
+  --accent-foreground: #06060a;
 }
 
 @theme inline {
@@ -17,6 +19,8 @@
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
   --color-accent-foreground: var(--accent-foreground);
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
@@ -50,7 +54,7 @@ body {
   background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -61,9 +65,28 @@ body {
   font-family: var(--font-display), var(--font-sans), sans-serif;
 }
 
-.text-outline {
-  -webkit-text-stroke: 1px var(--border);
-  color: transparent;
+/* ---------- ambient layers ---------- */
+
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(45% 35% at 18% 5%, rgba(139, 92, 246, 0.16), transparent 62%),
+    radial-gradient(38% 28% at 86% 10%, rgba(34, 211, 238, 0.11), transparent 62%),
+    radial-gradient(52% 42% at 72% 88%, rgba(198, 255, 58, 0.07), transparent 62%);
+}
+
+.dots-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 90% 65% at 50% 35%, black 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 65% at 50% 35%, black 25%, transparent 100%);
 }
 
 .noise-overlay {
@@ -71,7 +94,48 @@ body {
   position: fixed;
   inset: 0;
   z-index: 60;
-  opacity: 0.035;
+  opacity: 0.03;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* ---------- text ---------- */
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 20%, rgba(255, 255, 255, 0.44));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- marquee ---------- */
+
+.marquee-track {
+  animation: marquee 34s linear infinite;
+}
+.marquee-reverse {
+  animation-direction: reverse;
+  animation-duration: 42s;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
