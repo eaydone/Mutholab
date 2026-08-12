@@ -23,8 +23,8 @@ export default function Projects() {
         </Reveal>
 
         <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {projects.map((project, i) => (
-            <Reveal key={project.slug} delay={(i % 2) * 0.1}>
+          {projects.map((project, i) => {
+            const card = (
               <TiltCard className="group relative h-full rounded-3xl bg-gradient-to-b from-white/[0.14] via-white/[0.05] to-white/[0.02] p-px transition-shadow duration-300 hover:shadow-[0_0_60px_-18px_rgba(198,255,58,0.3)]">
                 <div className="relative h-full overflow-hidden rounded-[calc(1.5rem-1px)] bg-[#0a0a0e]">
                   <div className="relative aspect-[16/9] w-full overflow-hidden">
@@ -75,8 +75,20 @@ export default function Projects() {
                   </div>
                 </div>
               </TiltCard>
-            </Reveal>
-          ))}
+            );
+
+            return (
+              <Reveal key={project.slug} delay={(i % 2) * 0.1}>
+                {project.href ? (
+                  <a href={project.href} className="block h-full">
+                    {card}
+                  </a>
+                ) : (
+                  card
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

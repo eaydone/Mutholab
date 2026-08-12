@@ -8,9 +8,23 @@ export type Project = {
   stack: string[];
   image: string;
   color: string;
+  href?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "ceo-magazine",
+    name: "The CEO",
+    client: "Mutholab Original",
+    year: "2026",
+    category: "Media · AI",
+    description:
+      "Bangladesh's first AI-powered business magazine — an editorial engine that reads the global press, writes original Bangladesh-context analysis, and delivers weekly & monthly CEO newsletters.",
+    stack: ["AI Editorial", "Higgsfield", "Supabase"],
+    image: "/products/ceo-magazine-cover.png",
+    color: "#e8c47c",
+    href: "/products/ceo-magazine",
+  },
   {
     slug: "wepro-crm",
     name: "WEPRO CRM",

@@ -5,6 +5,7 @@ import type { Session } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 import JobsPanel from "@/components/admin/JobsPanel";
 import ApplicationsPanel from "@/components/admin/ApplicationsPanel";
+import SubscribersPanel from "@/components/admin/SubscribersPanel";
 
 const inputClass =
   "w-full rounded-2xl border border-border bg-white/[0.03] px-5 py-3.5 text-sm text-foreground placeholder:text-muted/60 backdrop-blur-xl outline-none transition-colors focus:border-accent/50";
@@ -12,7 +13,9 @@ const inputClass =
 export default function AdminPage() {
   const [session, setSession] = useState<Session | null>(null);
   const [checking, setChecking] = useState(true);
-  const [tab, setTab] = useState<"jobs" | "applications">("jobs");
+  const [tab, setTab] = useState<"jobs" | "applications" | "subscribers">(
+    "jobs"
+  );
   const [error, setError] = useState("");
   const [signingIn, setSigningIn] = useState(false);
 
@@ -120,6 +123,16 @@ export default function AdminPage() {
               Applications
             </button>
             <button
+              onClick={() => setTab("subscribers")}
+              className={`rounded-full px-5 py-2.5 text-sm transition-colors ${
+                tab === "subscribers"
+                  ? "bg-gradient-to-r from-accent to-accent-2 font-semibold text-accent-foreground"
+                  : "border border-border text-muted hover:text-foreground"
+              }`}
+            >
+              Subscribers
+            </button>
+            <button
               onClick={() => supabase.auth.signOut()}
               className="rounded-full border border-border px-5 py-2.5 text-sm text-muted transition-colors hover:text-foreground"
             >
@@ -129,7 +142,9 @@ export default function AdminPage() {
         </header>
 
         <div className="mt-10">
-          {tab === "jobs" ? <JobsPanel /> : <ApplicationsPanel />}
+          {tab === "jobs" && <JobsPanel />}
+          {tab === "applications" && <ApplicationsPanel />}
+          {tab === "subscribers" && <SubscribersPanel />}
         </div>
       </div>
     </main>
