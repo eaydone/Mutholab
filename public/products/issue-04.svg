@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="1216" viewBox="0 0 896 1216" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <linearGradient id="vig" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="896" height="1216" fill="#1a1024"/>
+  <path d="M40 700 C 220 640, 420 760, 620 700 S 900 650, 860 700" fill="none" stroke="#a855f7" stroke-opacity="0.5" stroke-width="2.5" />
+  <path d="M40 742 C 220 682, 420 802, 620 742 S 900 692, 860 742" fill="none" stroke="#a855f7" stroke-opacity="0.42" stroke-width="2.5" />
+  <path d="M40 784 C 220 724, 420 844, 620 784 S 900 734, 860 784" fill="none" stroke="#a855f7" stroke-opacity="0.33999999999999997" stroke-width="2.5" />
+  <path d="M40 826 C 220 766, 420 886, 620 826 S 900 776, 860 826" fill="none" stroke="#a855f7" stroke-opacity="0.26" stroke-width="2.5" />
+  <path d="M40 868 C 220 808, 420 928, 620 868 S 900 818, 860 868" fill="none" stroke="#a855f7" stroke-opacity="0.18" stroke-width="2.5" />
+  <rect width="896" height="1216" fill="url(#vig)"/>
+
+  <text x="60" y="150" font-size="112" font-weight="400" letter-spacing="4" fill="#f0e6ff">THE CEO</text>
+  <rect x="60" y="182" width="776" height="1.5" fill="#f0e6ff" fill-opacity="0.45"/>
+
+  <text x="60" y="222" font-size="17" letter-spacing="5" font-family="'Courier New', monospace" fill="#f0e6ff" fill-opacity="0.8">ISSUE 04   ·   MAY 2026   ·   BANGLADESH EDITION</text>
+
+  <text x="60" y="360" font-size="86" font-weight="700" letter-spacing="-1" fill="#ffffff">POWER</text>
+  <text x="60" y="452" font-size="86" font-weight="700" letter-spacing="-1" fill="#ffffff">&amp;</text>
+  <text x="60" y="544" font-size="86" font-weight="700" letter-spacing="-1" fill="#ffffff">PRICE</text>
+
+  <rect x="60" y="596" width="120" height="4" fill="#a855f7"/>
+
+  <text x="60" y="696" font-size="24" fill="#ffffff" fill-opacity="0.82">The energy math behind every 2026 P&amp;L</text>
+  <text x="60" y="736" font-size="24" fill="#ffffff" fill-opacity="0.82">Adani, LNG and the tariff nobody survives</text>
+  <text x="60" y="776" font-size="24" fill="#ffffff" fill-opacity="0.82">6 CEOs on hedging the next shock</text>
+
+  <text x="60" y="1160" font-size="15" letter-spacing="4" font-family="'Courier New', monospace" fill="#f0e6ff" fill-opacity="0.65">MUTHOLAB ORIGINAL   ·   AI-ASSISTED, EDITOR-APPROVED</text>
+</svg>

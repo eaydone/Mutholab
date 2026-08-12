@@ -5,6 +5,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Reveal from "@/components/Reveal";
 import SubscribeForm from "@/components/products/SubscribeForm";
+import NewsletterPreview from "@/components/products/NewsletterPreview";
+import EditorialDashboard from "@/components/products/EditorialDashboard";
 
 export const metadata: Metadata = {
   title: "The CEO — Bangladesh's AI-Powered Business Magazine | Mutholab",
@@ -32,6 +34,29 @@ const PIPELINE = [
     step: "04",
     title: "Human sign-off",
     text: "Nothing ships without a human editor's approval. No fabricated quotes, no invented numbers — if we can't verify it, we don't print it.",
+  },
+];
+
+const ISSUES = [
+  {
+    src: "/products/ceo-magazine-cover.png",
+    issue: "Issue 01",
+    line: "The Founder Issue",
+  },
+  {
+    src: "/products/issue-02.svg",
+    issue: "Issue 02",
+    line: "The Garment Reset",
+  },
+  {
+    src: "/products/issue-03.svg",
+    issue: "Issue 03",
+    line: "The Fintech Decade",
+  },
+  {
+    src: "/products/issue-04.svg",
+    issue: "Issue 04",
+    line: "Power & Price",
   },
 ];
 
@@ -172,6 +197,64 @@ export default function CeoMagazinePage() {
             </div>
           </div>
 
+          {/* Inside the engine */}
+          <div className="mt-28">
+            <Reveal>
+              <span className="inline-block rounded-full border border-border bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted backdrop-blur-xl">
+                Inside the platform
+              </span>
+              <h2 className="text-gradient mt-6 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+                The newsroom, running itself.
+              </h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+                Every issue is assembled in our editorial console — sources
+                streaming in, stories moving through drafting and fact-check,
+                and a human editor holding the send button.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="mt-12">
+                <EditorialDashboard />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Issue gallery */}
+          <div className="mt-28">
+            <Reveal>
+              <span className="inline-block rounded-full border border-border bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted backdrop-blur-xl">
+                The editions
+              </span>
+              <h2 className="text-gradient mt-6 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
+                Every cover, designed by the AI studio.
+              </h2>
+            </Reveal>
+
+            <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {ISSUES.map((issue, i) => (
+                <Reveal key={issue.issue} delay={i * 0.07}>
+                  <div className="group">
+                    <div className="overflow-hidden rounded-xl border border-white/12 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:-translate-y-2">
+                      <Image
+                        src={issue.src}
+                        alt={`The CEO — ${issue.issue}: ${issue.line}`}
+                        width={896}
+                        height={1216}
+                        className="h-auto w-full"
+                        unoptimized
+                      />
+                    </div>
+                    <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
+                      {issue.issue}
+                    </p>
+                    <p className="mt-1 text-sm text-muted">{issue.line}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+
           {/* Newsletters */}
           <div className="mt-28">
             <Reveal>
@@ -181,6 +264,38 @@ export default function CeoMagazinePage() {
               <h2 className="text-gradient mt-6 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
                 Two rhythms. One habit.
               </h2>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="mt-12 grid items-start gap-10 lg:grid-cols-[1.05fr_1fr]">
+                <NewsletterPreview />
+                <div>
+                  <h3 className="font-display text-2xl font-semibold tracking-tight">
+                    This is what lands at 7:00 AM Sunday.
+                  </h3>
+                  <p className="mt-4 text-base leading-relaxed text-muted">
+                    Not a link dump. A written brief — global moves translated
+                    into taka, lead times, and tariffs, with the market
+                    dashboard your CFO would have pulled manually. Every claim
+                    carries the sources it was synthesised from.
+                  </p>
+                  <ul className="mt-6 space-y-3">
+                    {[
+                      "Read in five minutes, on a phone, before the driver arrives",
+                      "Numbers pulled live — no stale figures from last quarter",
+                      "Source counts shown on every story, so you can go deeper",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 text-sm leading-relaxed text-muted"
+                      >
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </Reveal>
 
             <div className="mt-12 grid gap-4 md:grid-cols-2">
