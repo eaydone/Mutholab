@@ -1,5 +1,10 @@
 [build]
   command = "npm run build"
+  publish = "out"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Pretty URLs for client-rendered job pages: /careers/<slug> serves the
+# static careers-view page, which reads the slug from the URL path.
+[[redirects]]
+  from = "/careers/*"
+  to = "/careers-view.html"
+  status = 200

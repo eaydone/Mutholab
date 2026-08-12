@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { supabase, type Job } from "@/lib/supabase";
 
@@ -51,7 +50,7 @@ export default function Careers() {
 
           {jobs.map((job, i) => (
             <Reveal key={job.slug} delay={i * 0.07}>
-              <Link
+              <a
                 href={`/careers/${job.slug}`}
                 className="group flex flex-col justify-between gap-6 rounded-3xl border border-border bg-white/[0.03] p-7 backdrop-blur-xl transition-all duration-300 hover:border-accent/40 hover:shadow-[0_0_44px_-14px_rgba(198,255,58,0.3)] md:flex-row md:items-center md:p-8"
               >
@@ -87,7 +86,7 @@ export default function Careers() {
                 <span className="shrink-0 rounded-full border border-border bg-white/[0.04] px-6 py-3 text-center text-sm font-medium backdrop-blur-xl transition-all group-hover:border-accent group-hover:bg-gradient-to-r group-hover:from-accent group-hover:to-accent-2 group-hover:text-accent-foreground">
                   View role →
                 </span>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -58,23 +57,27 @@ function DetailsBlock({ details }: { details: string }) {
 }
 
 export default function JobPage() {
-  const params = useParams<{ slug: string }>();
   const [job, setJob] = useState<Job | null>(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!params?.slug) return;
+    // Served at /careers/<slug> via rewrite — the slug lives in the URL path.
+    // Falls back to ?slug= for direct access to /careers-view.
+    const fromPath = window.location.pathname.match(/\/careers\/([^/]+)\/?$/);
+    const fromQuery = new URLSearchParams(window.location.search).get("slug");
+    const slug = decodeURIComponent(fromPath?.[1] ?? fromQuery ?? "");
+    // An empty slug simply matches no rows and renders the not-found state.
     supabase
       .from("jobs")
       .select("*")
-      .eq("slug", params.slug)
+      .eq("slug", slug)
       .eq("active", true)
       .maybeSingle()
       .then(({ data }) => {
         setJob(data ?? null);
         setLoaded(true);
       });
-  }, [params?.slug]);
+  }, []);
 
   return (
     <div className="flex flex-1 flex-col">
