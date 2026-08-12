@@ -13,12 +13,12 @@ export default function Projects() {
               03 — Selected work
             </p>
             <h2 className="mt-4 max-w-xl font-display text-3xl font-medium tracking-tight md:text-5xl">
-              Products I&apos;ve built, end to end.
+              Products we&apos;ve built, end to end.
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted">
             A cross-section of SaaS tools, e-commerce platforms, and
-            automation systems — each designed, built, and shipped solo.
+            automation systems — each designed, built, and shipped in-house.
           </p>
         </Reveal>
 

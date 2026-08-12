@@ -16,9 +16,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Eyad Islam — SaaS Developer",
+  title: "Mutholab — SaaS Product Studio",
   description:
-    "Eyad Islam builds full-stack SaaS products end to end — from CRMs and e-commerce platforms to diagnostic tools and automation systems.",
+    "Mutholab designs and builds full-stack SaaS products end to end — from CRMs and e-commerce platforms to diagnostic tools and automation systems.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

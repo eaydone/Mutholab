@@ -15,16 +15,15 @@ export default function About() {
           <div className="md:col-span-8">
             <Reveal>
               <p className="font-display text-3xl font-medium leading-tight tracking-tight md:text-4xl">
-                I&apos;m a bespoke, one-person engineering shop — committed to
-                turning ideas into working SaaS products, fast. I handle
-                everything: product thinking, interface, backend, data, and
-                deployment.
+                Mutholab is a bespoke product studio — committed to turning
+                ideas into working SaaS products, fast. We handle everything:
+                product thinking, interface, backend, data, and deployment.
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-                Over the past few years I&apos;ve shipped CRMs, e-commerce
+                Over the past few years we&apos;ve shipped CRMs, e-commerce
                 platforms, diagnostic tools, automation bots, and internal
                 systems across industries — automotive, retail, community
                 platforms, and more. Every project ships as a real, working

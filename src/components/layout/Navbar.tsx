@@ -34,7 +34,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
         <a href="#top" className="font-display text-lg font-semibold tracking-tight">
-          Eyad<span className="text-accent">.</span>
+          Mutholab<span className="text-accent">.</span>
         </a>
 
         <ul className="hidden items-center gap-9 md:flex">

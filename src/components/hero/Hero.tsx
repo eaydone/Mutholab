@@ -42,7 +42,7 @@ export default function Hero() {
           className="mb-6 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.3em] text-muted"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-          Available for select projects — 2026
+          Now onboarding new clients — 2026
         </motion.p>
 
         <motion.h1
@@ -61,10 +61,10 @@ export default function Hero() {
           className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end"
         >
           <p className="max-w-xl text-lg leading-relaxed text-muted md:text-xl">
-            I&apos;m <span className="text-foreground">Eyad Islam</span>, a
-            full-stack developer who designs, builds, and ships SaaS products
-            end to end — CRMs, e-commerce platforms, diagnostic tools,
-            automation systems — solo, from idea to production.
+            <span className="text-foreground">Mutholab</span> is a product
+            studio that designs, builds, and ships SaaS products end to end
+            — CRMs, e-commerce platforms, diagnostic tools, automation
+            systems — from idea to production.
           </p>
 
           <div className="flex shrink-0 gap-3">

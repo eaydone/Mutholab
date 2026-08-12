@@ -31,8 +31,8 @@ export default function Contact() {
           <div className="mt-14 flex flex-col justify-between gap-8 border-t border-border pt-10 md:flex-row md:items-center">
             <p className="max-w-md text-base leading-relaxed text-muted">
               Have a SaaS idea, an internal tool that needs building, or a
-              product that needs shipping? I take on a limited number of
-              projects at a time — reach out and let&apos;s talk.
+              product that needs shipping? We take on a limited number of
+              client engagements at a time — reach out and let&apos;s talk.
             </p>
 
             <ul className="flex flex-wrap gap-x-8 gap-y-3">

@@ -29,10 +29,10 @@ export default function Services() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal>
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
-            02 — What I do
+            02 — What we do
           </p>
           <h2 className="mt-4 max-w-2xl font-display text-3xl font-medium tracking-tight md:text-5xl">
-            End-to-end SaaS delivery, one engineer, four disciplines.
+            End-to-end SaaS delivery across four disciplines.
           </h2>
         </Reveal>
 

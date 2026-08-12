@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     slug: "droidsweep",
     name: "DroidSweep",
-    client: "Personal",
+    client: "In-house build",
     year: "2026",
     category: "SaaS · Diagnostics",
     description:
@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     slug: "wa-collector",
     name: "WA Collector",
-    client: "Internal tool",
+    client: "In-house build",
     year: "2026",
     category: "SaaS · Automation",
     description:
@@ -94,5 +94,5 @@ export const skills = [
 export const stats = [
   { value: "10+", label: "SaaS products shipped" },
   { value: "6", label: "Industries served" },
-  { value: "100%", label: "Solo-built, end to end" },
+  { value: "100%", label: "In-house, end to end" },
 ];
