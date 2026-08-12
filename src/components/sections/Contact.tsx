@@ -17,7 +17,7 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <Reveal>
           <span className="inline-block rounded-full border border-border bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted backdrop-blur-xl">
-            05 — Contact
+            06 — Contact
           </span>
         </Reveal>
 
