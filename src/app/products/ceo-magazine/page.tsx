@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import Reveal from "@/components/Reveal";
 import SubscribeForm from "@/components/products/SubscribeForm";
 import NewsletterPreview from "@/components/products/NewsletterPreview";
+import MagazineCover, { type Cover } from "@/components/products/MagazineCover";
 import EditorialDashboard from "@/components/products/EditorialDashboard";
 
 export const metadata: Metadata = {
@@ -37,26 +38,55 @@ const PIPELINE = [
   },
 ];
 
-const ISSUES = [
+const ISSUES: (Cover & { caption: string })[] = [
   {
     src: "/products/ceo-magazine-cover.png",
     issue: "Issue 01",
-    line: "The Founder Issue",
+    date: "FEBRUARY 2026",
+    headline: [],
+    lines: [],
+    ink: "#e8c47c",
+    baked: true,
+    caption: "The Founder Issue",
   },
   {
-    src: "/products/issue-02.svg",
+    src: "/products/issue-02.jpg",
     issue: "Issue 02",
-    line: "The Garment Reset",
+    date: "MARCH 2026",
+    headline: ["The Garment", "Reset"],
+    lines: [
+      "Why $47bn in exports now depends on automation",
+      "Inside 12 factories rebuilding their floor",
+      "The compliance bill nobody priced in",
+    ],
+    ink: "#e8c47c",
+    caption: "The Garment Reset",
   },
   {
-    src: "/products/issue-03.svg",
+    src: "/products/issue-03.jpg",
     issue: "Issue 03",
-    line: "The Fintech Decade",
+    date: "APRIL 2026",
+    headline: ["The Fintech", "Decade"],
+    lines: [
+      "bKash, Nagad and the war for 190m wallets",
+      "What UPI taught India — and what Dhaka missed",
+      "The regulation coming in Q3",
+    ],
+    ink: "#8ee6ff",
+    caption: "The Fintech Decade",
   },
   {
-    src: "/products/issue-04.svg",
+    src: "/products/issue-04.jpg",
     issue: "Issue 04",
-    line: "Power & Price",
+    date: "MAY 2026",
+    headline: ["Power", "& Price"],
+    lines: [
+      "The energy math behind every 2026 P&L",
+      "LNG, tariffs and the shock nobody survives",
+      "6 CEOs on hedging the next one",
+    ],
+    ink: "#e3d0ff",
+    caption: "Power & Price",
   },
 ];
 
@@ -235,20 +265,13 @@ export default function CeoMagazinePage() {
               {ISSUES.map((issue, i) => (
                 <Reveal key={issue.issue} delay={i * 0.07}>
                   <div className="group">
-                    <div className="overflow-hidden rounded-xl border border-white/12 shadow-[0_24px_50px_-20px_rgba(0,0,0,0.8)] transition-transform duration-500 group-hover:-translate-y-2">
-                      <Image
-                        src={issue.src}
-                        alt={`The CEO — ${issue.issue}: ${issue.line}`}
-                        width={896}
-                        height={1216}
-                        className="h-auto w-full"
-                        unoptimized
-                      />
+                    <div className="transition-transform duration-500 group-hover:-translate-y-2">
+                      <MagazineCover cover={issue} />
                     </div>
                     <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-accent">
                       {issue.issue}
                     </p>
-                    <p className="mt-1 text-sm text-muted">{issue.line}</p>
+                    <p className="mt-1 text-sm text-muted">{issue.caption}</p>
                   </div>
                 </Reveal>
               ))}
