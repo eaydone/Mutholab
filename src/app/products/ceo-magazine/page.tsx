@@ -7,7 +7,6 @@ import Reveal from "@/components/Reveal";
 import SubscribeForm from "@/components/products/SubscribeForm";
 import NewsletterPreview from "@/components/products/NewsletterPreview";
 import MagazineCover, { type Cover } from "@/components/products/MagazineCover";
-import EditorialDashboard from "@/components/products/EditorialDashboard";
 
 export const metadata: Metadata = {
   title: "The CEO — Bangladesh's AI-Powered Business Magazine | Mutholab",
@@ -225,29 +224,6 @@ export default function CeoMagazinePage() {
                 </Reveal>
               ))}
             </div>
-          </div>
-
-          {/* Inside the engine */}
-          <div className="mt-28">
-            <Reveal>
-              <span className="inline-block rounded-full border border-border bg-white/[0.04] px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.25em] text-muted backdrop-blur-xl">
-                Inside the platform
-              </span>
-              <h2 className="text-gradient mt-6 max-w-2xl font-display text-4xl font-semibold tracking-tight md:text-5xl">
-                The newsroom, running itself.
-              </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
-                Every issue is assembled in our editorial console — sources
-                streaming in, stories moving through drafting and fact-check,
-                and a human editor holding the send button.
-              </p>
-            </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="mt-12">
-                <EditorialDashboard />
-              </div>
-            </Reveal>
           </div>
 
           {/* Issue gallery */}
