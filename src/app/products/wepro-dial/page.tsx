@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import DialerConsole from "@/components/products/DialerConsole";
 import CampaignDashboard from "@/components/products/CampaignDashboard";
 import DemoRequestForm from "@/components/products/DemoRequestForm";
+import BenefitsGrid from "@/components/products/BenefitsGrid";
 
 export const metadata: Metadata = {
   title: "WEPRO Dial — AI Predictive Dialer for Bangladesh | Mutholab",
@@ -156,6 +157,20 @@ export default function WeproDialPage() {
               ))}
             </div>
           </Reveal>
+
+          {/* Benefits */}
+          <div className="mt-28">
+            <Reveal>
+              <h2 className="text-gradient mx-auto max-w-3xl text-center font-display text-4xl font-semibold tracking-tight md:text-6xl">
+                Make 3× more calls per hour.
+              </h2>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <div className="mt-14">
+                <BenefitsGrid />
+              </div>
+            </Reveal>
+          </div>
 
           {/* Console */}
           <div id="console" className="mt-28 scroll-mt-28">
