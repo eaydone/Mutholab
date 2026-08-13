@@ -26,6 +26,19 @@ export const projects: Project[] = [
     href: "/products/ceo-magazine",
   },
   {
+    slug: "wepro-dial",
+    name: "WEPRO Dial",
+    client: "Mutholab Original",
+    year: "2026",
+    category: "SaaS · Telephony",
+    description:
+      "An AI predictive dialer for Bangladeshi sales floors — adaptive dial pacing, voicemail detection, local caller ID, DNC compliance, and native CRM sync.",
+    stack: ["Predictive AI", "VoIP", "Supabase"],
+    image: "/products/dial-floor.jpg",
+    color: "#22d3ee",
+    href: "/products/wepro-dial",
+  },
+  {
     slug: "wepro-crm",
     name: "WEPRO CRM",
     client: "LeadManager",
